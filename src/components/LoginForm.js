@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormInput from "../FormInput";
+import FormInput from "./FormInput";
 
 export default function LoginForm(props) {
   const [formState, setFormState] = useState({
@@ -47,7 +47,7 @@ export default function LoginForm(props) {
         remember: formState.rememberMe,
       })
       .then((res) => {
-        alert(res.data);
+        console.log(res.data);
       });
   };
   function handleClick(event) {
