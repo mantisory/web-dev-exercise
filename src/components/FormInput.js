@@ -7,6 +7,7 @@ export default function FormInput(props) {
   const handleFocus = (e) => {
     setFocused(true);
   };
+
   return (
     <>
       {inputProps.type === "checkbox" ? (

@@ -8,6 +8,7 @@ export default function LoginForm(props) {
     password: null,
     rememberMe: false,
   });
+
   const inputs = [
     {
       id: "email",
@@ -54,7 +55,6 @@ export default function LoginForm(props) {
     console.log(event);
   }
   const handleChange = (event) => {
-    console.log(event.target.name);
     setFormState({
       ...formState,
       [event.target.name]:
