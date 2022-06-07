@@ -16,7 +16,7 @@ export default function LoginForm(props) {
       label: "Email",
       htmlFor: "email",
       errorMessage: "Invalid email address",
-      pattern: "^[a-z0-9]+@[a-z]+.[a-z]{2,3}$",
+      pattern: "^[a-z0-9+.]+@[a-z]+.[a-z]{2,3}$",
       required: true,
     },
     {
