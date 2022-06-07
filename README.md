@@ -5,7 +5,8 @@ Download the repository using \
 `git clone https://github.com/mantisory/web-dev-exercise.git` \
 Once the repository has cloned into the new directory, change to the new directory and run \
 `npm install` \
-This will install all the necessary libraries and dependencies.
+This will install all the necessary libraries and dependencies. Once this is done the project can be run using \
+`npm start` \
 This project also includes a gulpfile to assist with Sass builds automatically. \
 To use it, type \
 `npm install --save-dev gulp gulp-sass sass del` \
