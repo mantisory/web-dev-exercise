@@ -8,7 +8,7 @@ Once the repository has cloned into the new directory, change to the new directo
 This will install all the necessary libraries and dependencies.
 This project also includes a gulpfile to assist with Sass builds automatically. \
 To use it, type \
-`npm install --save-dev gulp gulp-sass del` \
+`npm install --save-dev gulp gulp-sass sass del` \
 Once those packages have installed, type \
 `gulp watch`\
 Any time an scss file is modified and saved gulp will build new css files and distribute them to the /src/css folder
