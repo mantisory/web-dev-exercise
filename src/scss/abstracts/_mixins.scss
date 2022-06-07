@@ -1,0 +1,109 @@
+@use "./type-scale";
+
+$breakpoints: (
+    phone: 600px,
+    tablet: 1024px,
+    laptop: 1181px,
+    desktop: 1680px,
+    largedesktop: 2560px,
+    fourkdesktop: 3840px,
+);
+
+@mixin mq($key) {
+    $size: map-get($breakpoints, $key);
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+@mixin phone-landscape {
+    @media (orientation: landscape) and (min-width: 500px) and (max-width: 1023px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: 601px) and (max-width: 1180px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (min-width: 1181px) and (max-width: 1919px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: 1680px) and(max-width:2559px) {
+        @content;
+    }
+}
+@mixin large-desktop {
+    @media (min-width: 2560px) and (max-width: 3839px) {
+        @content;
+    }
+}
+@mixin fourk-desktop {
+    @media (min-width: 3840px) {
+        @content;
+    }
+}
+
+@mixin orientation($direction) {
+    $orientation-landscape: "(orientation:landscape)";
+    $orientation-portrait: "(orientation:portrait)";
+
+    @if $direction == landscape {
+        @media #{$orientation-landscape} {
+            @content;
+        }
+    }
+    @if $direction == portrait {
+        @media #{$orientation-portrait} {
+            @content;
+        }
+    }
+}
+
+:root {
+    @each $screen-size, $font-size in type-scale.$type-scale {
+        @if $screen-size == phone {
+            @each $size, $value in $font-size {
+                --fs-#{$size}: #{$value};
+            }
+        } @else if $screen-size == tablet {
+            @include mq(tablet) {
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        } @else if $screen-size == laptop {
+            @include mq(laptop) {
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        } @else if $screen-size == desktop {
+            @include mq(desktop) {
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        } @else if $screen-size == largedesktop {
+            @include mq(largedesktop) {
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        } @else if $screen-size == fourkdesktop {
+            @include mq(fourkdesktop) {
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        }
+    }
+}
