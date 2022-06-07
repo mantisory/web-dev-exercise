@@ -2,4 +2,4 @@
 This is a development exercise to complete my application for the web developer role.
 ## To run this application locally
 Download the repository using 
-`git clone `
+`git clone https://github.com/mantisory/web-dev-exercise.git`
